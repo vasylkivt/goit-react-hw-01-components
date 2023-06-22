@@ -19,5 +19,5 @@ TableBody.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };

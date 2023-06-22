@@ -18,5 +18,5 @@ StatisticList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
