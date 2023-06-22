@@ -3,24 +3,30 @@ import stats from '../bd/uploadStatistics/data.json';
 import friends from '../bd/friendList/friends.json';
 import transactions from '../bd/transactionsHistory/transactions.json';
 
-import Profile from './userProfile/userProfile';
-import StatisticList from './statisticList/statisticList';
-import FriendList from './friendList/FriendList';
-import TransactionHistory from './transactionsHistoryTable/transactionsHistoryTable';
+import Section from './Section/Section';
+import Profile from './UserProfile/userProfile';
+import StatisticList from './StatisticList/StatisticList';
+import FriendList from './FriendList/FriendList';
+import TableBody from './TransactionsTable/TableBody/TableBody';
+import TableHead from './TransactionsTable/TableHead/TableHead';
 
 export const App = () => {
   return (
     <>
-      <Profile user={user} />
-      <StatisticList title="Upload stats" stats={stats} />
-      <FriendList friends={friends} />;
-      <TransactionHistory
-        transactions={transactions}
-        titleType="Type"
-        titleAmount="Amount"
-        titleCurrency="Currency"
-      />
-      ;
+      <Section title="Profile" className="profile">
+        <Profile user={user} />
+      </Section>
+      <Section title="Upload stats" className="statistics">
+        <StatisticList stats={stats} />
+      </Section>
+      <Section title="Friend List" className="friend-list">
+        <FriendList friends={friends} />
+      </Section>
+      <Section title="Transaction History" className="transaction-history">
+        <TableHead>
+          <TableBody transactions={transactions} />
+        </TableHead>
+      </Section>
     </>
   );
 };

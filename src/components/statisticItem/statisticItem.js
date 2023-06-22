@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function StatisticItem({ percentage, label }) {
   return (
     <>
@@ -6,3 +8,8 @@ export default function StatisticItem({ percentage, label }) {
     </>
   );
 }
+
+StatisticItem.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired,
+};
