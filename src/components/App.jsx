@@ -4,7 +4,7 @@ import friends from '../bd/friendList/friends.json';
 import transactions from '../bd/transactionsHistory/transactions.json';
 
 import Section from './Section/Section';
-import Profile from './UserProfile/userProfile';
+import Profile from './UserProfile/UserProfile';
 import StatisticList from './StatisticList/StatisticList';
 import FriendList from './FriendList/FriendList';
 import TableBody from './TransactionsTable/TableBody/TableBody';
