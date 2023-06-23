@@ -10,19 +10,24 @@ import FriendList from './FriendList/FriendList';
 import TableBody from './TransactionsTable/TableBody/TableBody';
 import TableHead from './TransactionsTable/TableHead/TableHead';
 
+import css from './App.module.css';
+
 export const App = () => {
   return (
     <>
-      <Section title="Profile" className="profile">
+      <Section title="Profile" className={css.profile}>
         <Profile user={user} />
       </Section>
-      <Section title="Upload stats" className="statistics">
+      <Section title="Upload stats" className={css.statistics}>
         <StatisticList stats={stats} />
       </Section>
-      <Section title="Friend List" className="friend-list">
+      <Section title="Friend List" className={css['friend-list']}>
         <FriendList friends={friends} />
       </Section>
-      <Section title="Transaction History" className="transaction-history">
+      <Section
+        title="Transaction History"
+        className={css['transaction-history']}
+      >
         <TableHead>
           <TableBody transactions={transactions} />
         </TableHead>

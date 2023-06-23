@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './UserProfile.module.css';
 
 export default function Profile({
   user: {
@@ -10,26 +11,26 @@ export default function Profile({
   },
 }) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={username} className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={avatar} alt={username} className={css.avatar} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
+      <ul className={css.stats}>
+        <li className={css['stats-item']}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
+        <li className={css['stats-item']}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{formatNumber(views)}</span>
         </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
+        <li className={css['stats-item']}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
@@ -49,3 +50,21 @@ Profile.propTypes = {
     }).isRequired,
   }).isRequired,
 };
+
+function formatNumber(number) {
+  let strNumber = String(number);
+
+  const hasComma = strNumber.indexOf('.') !== -1;
+
+  let [integerPart, decimalPart] = hasComma
+    ? strNumber.split('.')
+    : [strNumber, ''];
+
+  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  const formattedNumber = hasComma
+    ? `${integerPart}.${decimalPart}`
+    : integerPart;
+
+  return formattedNumber;
+}
