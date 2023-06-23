@@ -1,0 +1,32 @@
+.transaction-history {
+  margin: 0 auto;
+  border-spacing: 1px;
+  border-radius: 6px;
+
+  background-color: #fff;
+}
+
+.thead {
+  /* background-color: #00b164; */
+}
+
+.tr {
+  border-radius: 6px;
+}
+.th {
+  min-width: 160px;
+  padding: 6px;
+  border-radius: 6px;
+  background-color: #00b164;
+
+  color: #fff;
+
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+.th:first-child {
+  padding-left: 20px;
+  text-align: left;
+}

@@ -1,0 +1,14 @@
+.td {
+  padding: 3px;
+  color: #2e2f42;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.td:first-child {
+  padding-left: 20px;
+  text-align: left;
+  text-transform: capitalize;
+}

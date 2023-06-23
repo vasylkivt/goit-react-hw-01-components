@@ -52,15 +52,3 @@ img {
 address {
   font-style: normal;
 }
-
-.status {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(217, 30, 30);
-}
-
-.status.is-online {
-  background-color: rgb(44, 203, 27);
-}

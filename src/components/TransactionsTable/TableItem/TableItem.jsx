@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-
+import css from './TableItem.module.css';
 export default function TableItem({ type, amount, currency }) {
   return (
     <>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
+      <td className={css.td}>{type}</td>
+      <td className={css.td}>{amount}</td>
+      <td className={css.td}>{currency}</td>
     </>
   );
 }
