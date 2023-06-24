@@ -1,6 +1,7 @@
 import StatisticItem from 'components/StatisticItem/StatisticItem';
 import PropTypes from 'prop-types';
 import css from './StatisticList.module.css';
+import { getRandomHexColor } from 'utils';
 
 export default function StatisticList({ stats }) {
   return (
@@ -25,9 +26,3 @@ StatisticList.propTypes = {
     })
   ).isRequired,
 };
-
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
